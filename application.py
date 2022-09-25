@@ -66,3 +66,16 @@ def session_api():
 def greet(person):
   return f"Hi {person}"
 
+def checkURL(url):
+    urls = {}
+
+    if os.path.exists('urls.json'):
+        with open('urls.json') as urls_file:
+            urls = json.load(urls_file)
+
+    print(urls.values())
+
+    if url in urls.values():
+        return True
+    else:
+        return False
